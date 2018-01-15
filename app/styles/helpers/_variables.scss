@@ -1,0 +1,20 @@
+@import "colors";
+
+// Z-INDEX MANAGEMENT
+// -----------------------------------
+$z-layers: (
+    'hide': -1,
+    'zero': 0,
+    'default': 1,
+    'nav': 2,
+);
+
+// GLOBAL SETTINGS
+// -----------------------------------
+
+// Transition  property
+$gl-trs-duration: .3s;
+$gl-trs-function: ease-in-out;
+
+// Text transform letterspacing
+$gl-letter-spacing: .2em;

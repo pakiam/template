@@ -1,0 +1,8 @@
+include ../icon/icon
+mixin page()
+	+b('body').page&attributes(attributes)
+		block
+		| allo
+		.sprite
+		.sprite-2
+			+icon('twitter-logo-silhouette', true).logo&attributes(attributes)

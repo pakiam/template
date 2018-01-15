@@ -1,0 +1,84 @@
+@import "./settings";
+
+// base settings
+$columns: 36;
+$column-width: 38;
+// common settings
+$max-width-layout: false;
+
+/** Row **/
+@mixin container() {
+    max-width: $max-width-layout + 'px';
+    margin-left: auto;
+    margin: auto;
+}
+@mixin row() {
+    display: flex;
+    flex-flow: row wrap;
+}
+/** Columns **/
+@mixin columns($columns, $column) {
+    flex: 0 0 100/$columns*$column * 1%;
+    max-width: 100/$columns*$column * 1%;
+}
+
+
+/** Media **/
+@mixin small-up() {
+    @media #{$small-up} {
+        @content;
+    }
+}
+
+@mixin small-only() {
+    @media #{$small-only} {
+        @content;
+    }
+}
+
+@mixin medium-up() {
+    @media #{$medium-up} {
+        @content;
+    }
+}
+
+@mixin medium-only() {
+    @media #{$medium-only} {
+        @content;
+    }
+}
+
+@mixin large-up() {
+    @media #{$large-up} {
+        @content;
+    }
+}
+@mixin large-only() {
+    @media #{$large-only} {
+        @content;
+    }
+}
+
+@mixin xlarge-up() {
+    @media #{$xlarge-up} {
+        @content;
+    }
+}
+
+@mixin xlarge-only() {
+    @media #{$xlarge-only} {
+        @content;
+    }
+}
+
+@mixin xxlarge-up() {
+    @media #{xxlarge-up} {
+        @content;
+    }
+}
+
+@mixin xxlarge-only() {
+    @media #{$xxlarge-only} {
+        @content;
+    }
+}
