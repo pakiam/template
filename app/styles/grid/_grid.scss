@@ -1,11 +1,11 @@
 @import "settings";
 @import "mixins";
 
-.container{
+.l-container{
     @include container;
 }
 
-.row{
+.l-row{
     @include row;
 }
 /** Media **/

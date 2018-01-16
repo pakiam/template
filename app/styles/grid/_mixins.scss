@@ -16,12 +16,18 @@
     flex-flow: row wrap;
 }
 
+// TODO row gutter
+// TODO fluid-row
+
 /** Column **/
 
 @mixin column() {
     display: flex;
     flex-flow: column wrap;
 }
+
+// TODO column offset
+// TODO column gutter
 
 /** Columns 
 
