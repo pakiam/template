@@ -1,28 +1,13 @@
-@import "./settings";
+@import "settings";
+@import "mixins";
 
-// base settings
-$columns: 36;
-$column-width: 38;
-// common settings
-$max-width-layout: false;
-
-/** Row **/
-@mixin container() {
-    max-width: $max-width-layout + 'px';
-    margin-left: auto;
-    margin: auto;
-}
-@mixin row() {
-    display: flex;
-    flex-flow: row wrap;
-}
-/** Columns **/
-@mixin columns($columns, $column) {
-    flex: 0 0 100/$columns*$column * 1%;
-    max-width: 100/$columns*$column * 1%;
+.container{
+    @include container;
 }
 
-
+.row{
+    @include row;
+}
 /** Media **/
 @mixin small-up() {
     @media #{$small-up} {

@@ -1,0 +1,36 @@
+@import "settings";
+
+/** Container **/
+
+@mixin container() {
+    display: block;
+    max-width: $max-width-layout + 'px';
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/** Row **/
+
+@mixin row() {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+/** Column **/
+
+@mixin column() {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+/** Columns 
+
+    $columns: columns count, default: $grid-columns
+    $column: count of cells, defaul: 1
+**/
+
+@mixin columns($columns: $grid-columns, $column: 1) {
+    $width: 100/$columns*$column * 1%;
+    flex: 0 0 $width;
+    max-width: $width;
+}
