@@ -4,9 +4,12 @@
 
 @mixin container() {
     display: block;
-    max-width: $max-width-layout + 'px';
+    max-width: $max-width-layout;
     margin-left: auto;
     margin-right: auto;
+}
+@mixin container-fluid() {
+	max-width: 100%;
 }
 
 /** Row **/
@@ -16,27 +19,40 @@
     flex-flow: row wrap;
 }
 
-// TODO row gutter
-// TODO fluid-row
+@mixin row-gutter($number) {
+	margin-left: ($number/2 * -1) * 1px;
+	margin-right: ($number/2 * -1) * 1px;
+}
 
 /** Column **/
 
-@mixin column() {
+@mixin column-row() {
     display: flex;
     flex-flow: column wrap;
 }
 
-// TODO column offset
-// TODO column gutter
-
-/** Columns 
+/** Columns
 
     $columns: columns count, default: $grid-columns
-    $column: count of cells, defaul: 1
-**/
+	$column: count of cells, defaul: 1
 
+	@return { Number }
+**/
+@function column-width($columns: $grid-columns, $column: 1){
+ 	@return 100/$columns*$column;
+}
 @mixin columns($columns: $grid-columns, $column: 1) {
-    $width: 100/$columns*$column * 1%;
+    $width: column-width($columns, $column) * 1%;
     flex: 0 0 $width;
     max-width: $width;
+}
+
+@mixin columns-offset($columns: $grid-columns, $column: 1) {
+	margin-left: column-width($columns, $column) * 1%;
+}
+
+// TODO column gutter
+@mixin columns-gutter($number) {
+	padding-left: $number/2 * 1px;
+	padding-right: $number/2 * 1px;
 }

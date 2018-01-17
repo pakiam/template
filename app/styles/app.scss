@@ -2,13 +2,37 @@
 @import "helpers/mixins";
 @import "helpers/fonts";
 @import "normalize-scss/sass/normalize/import-now";
+/**
+  Import or just write your settings here
+**/
+$max-width-layout: 1024px;
 @import "grid/grid";
 @import "helpers/sprite";
 
 // @import '../blocks/**/*';
-
-.col-1{
-    @include columns(12, 5);
+.l-custom-row{
+	@include row;
+	@include row-gutter(30);
+}
+.l-col-1{
+	@include columns(12, 1);
+	background-color: green;
+	@include columns-gutter(30);
+	@include columns-offset(12,2);
+}
+.l-col-7{
+	@include columns(12,7);
+	background-color: tomato;
+	@include columns-gutter(30);
+}
+.l-col-14-2{
+	@include columns(14, 2);
+	background-color: purple;
+	@include columns-gutter(30)
+}
+.l-col-4{
+	@include columns(12,4);
+	background-color: blue;
 }
 // HEADINGS
 h1 {
