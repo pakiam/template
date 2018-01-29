@@ -6,8 +6,13 @@
   Import or just write your settings here
 **/
 $max-width-layout: 1024px;
+/**
+  End of settings
+**/
+
 @import "grid/grid";
 @import "helpers/sprite";
+@import "utilityClasses/*";
 
 // @import '../blocks/**/*';
 .l-custom-row{
