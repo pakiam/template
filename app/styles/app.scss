@@ -12,7 +12,8 @@ $max-width-layout: 1024px;
 
 @import "grid/grid";
 @import "helpers/sprite";
-@import "utilityClasses/*";
+@import 'utilityClasses/margins';
+@import 'utilityClasses/paddings';
 
 // @import '../blocks/**/*';
 .l-custom-row{

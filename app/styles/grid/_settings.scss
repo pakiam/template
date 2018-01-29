@@ -10,6 +10,7 @@
 
 
 /** Breakpoints **/
+$media-names: ('xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge');
 
 $screen-xsmall: 0 !default;
 $screen-small: 480px !default;
@@ -17,6 +18,7 @@ $screen-medium: 768px !default;
 $screen-large: 992px !default;
 $screen-xlarge: 1200px !default;
 $screen-xxlarge: 1800px !default;
+
 
 /** Container widths **/
 
@@ -37,7 +39,7 @@ $grid-gutter-width: 30px !default;
 
 /** Strings for Media **/
 
-$media-screen: 'only screen';
+$media-screen: 'screen';
 $xsmall-up: $media-screen;
 $xsmall-only: '#{media-screen} and (max-width: #{getUpperWidthForMedia($screen-small)})';
 $small-up: '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-small)})';
@@ -50,3 +52,12 @@ $xlarge-up: '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-xla
 $xlarge-only: '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-xlarge)}) and (max-width:#{getUpperWidthForMedia($screen-xxlarge)})';
 $xxlarge-up: '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-xxlarge)})';
 $xxlarge-only: '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-xxlarge)})';
+
+$media-strings-only: (
+	'xsmall': '#{media-screen} and (max-width: #{getUpperWidthForMedia($screen-small)})',
+	'small': '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-small)}) and (max-width: #{getUpperWidthForMedia($screen-medium)})',
+	'medium': '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-medium)}) and (max-width:#{getUpperWidthForMedia($screen-large)})',
+	'large': '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-large)}) and (max-width:#{getUpperWidthForMedia($screen-xlarge)})',
+	'xlarge': '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-xlarge)}) and (max-width:#{getUpperWidthForMedia($screen-xxlarge)})',
+	'xxlarge': '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-xxlarge)})',
+);

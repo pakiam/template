@@ -56,3 +56,66 @@
 	padding-left: $number/2 * 1px;
 	padding-right: $number/2 * 1px;
 }
+
+/** Media **/
+
+@mixin small-up() {
+    @media #{$small-up} {
+        @content;
+    }
+}
+
+@mixin small-only() {
+    @media #{$small-only} {
+        @content;
+    }
+}
+
+@mixin medium-up() {
+    @media #{$medium-up} {
+        @content;
+    }
+}
+
+@mixin medium-only() {
+    @media #{$medium-only} {
+        @content;
+    }
+}
+
+@mixin large-up() {
+    @media #{$large-up} {
+        @content;
+    }
+}
+@mixin large-only() {
+    @media #{$large-only} {
+        @content;
+    }
+}
+
+@mixin xlarge-up() {
+    @media #{$xlarge-up} {
+        @content;
+    }
+}
+
+@mixin xlarge-only() {
+    @media #{$xlarge-only} {
+        @content;
+    }
+}
+
+@mixin xxlarge-up() {
+    @media #{xxlarge-up} {
+        @content;
+    }
+}
+
+@mixin xxlarge-only() {
+    @media #{$xxlarge-only} {
+        @content;
+    }
+}
+
+
