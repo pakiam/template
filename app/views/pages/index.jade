@@ -1,0 +1,31 @@
+extends ../layouts/layout-default
+include ../../blocks/icon/icon
+
+block head
+	- var pageTitle = 'Project Template';
+
+block content
+	| allo
+	.l-container
+		.l-custom-row
+			.l-col-1
+				| I`am col-1
+			.l-col-7
+				| I`am col-7
+				.l-custom-row
+					.l-col-14-2
+						| I`m col 2 in 14-cols grid
+					.l-col-14-2
+						| I`m col 2 in 14-cols grid
+					.l-col-14-2
+						| I`m col 2 in 14-cols grid
+					.l-col-14-2
+						| I`m col 2 in 14-cols grid
+					.l-col-14-2
+						| I`m col 2 in 14-cols grid
+					.l-col-14-2
+						| I`m col 2 in 14-cols grid
+					.l-col-14-2
+						| I`m col 2 in 14-cols grid
+	.sprite-2
+		//- +icon('twitter-logo-silhouette', true).logo&attributes(attributes)

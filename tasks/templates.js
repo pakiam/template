@@ -22,7 +22,7 @@ gulp.task('templates', () => (
 		.pipe(plumber({errorHandler: errorHandler(`Error in \'templates\' task`)}))
 		.pipe(cached('jade'))
 		.pipe(gulpIf(global.watch, inheritance({basedir: 'app'})))
-		.pipe(filter(file => /app[\\\/]pages/.test(file.path)))
+		.pipe(filter(file => /app[\\\/]views[\\\/]pages/.test(file.path)))
 		.pipe(jade({basedir: 'app', data}))
 		.pipe(gulpIf(process.env.PRETTIFY !== false, prettify({
 			braceStyle: 'expand',
