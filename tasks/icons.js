@@ -10,7 +10,7 @@ gulp.task('icons', () => (
 		.pipe(plumber({errorHandler: errorHandler(`Error in 'icons' task`)}))
 		.pipe(svgSprite({
 			mode: {
-				view: {
+				sprite: {
 					dest: './',
 					layout: 'diagonal',
 					sprite: 'default-svg',
@@ -24,7 +24,8 @@ gulp.task('icons', () => (
 				symbol: true,		// Activate the «symbol» mode
 				variables: {
 					mapname: 'icons'
-				}
+				},
+				svgId: "icon_%f"
 			}
 		}))
 		.pipe(gulpIf(/\.scss$/, gulp.dest('app/styles/helpers')))

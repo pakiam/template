@@ -74,7 +74,7 @@
 }
 
 @mixin medium-up() {
-    @media #{$medium-up} {
+    @media #{map-get($media-strings-up, 'medium')} {
         @content;
     }
 }
@@ -86,7 +86,7 @@
 }
 
 @mixin large-up() {
-    @media #{$large-up} {
+    @media #{map-get($media-strings-up, 'large')} {
         @content;
     }
 }
