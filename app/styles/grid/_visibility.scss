@@ -19,3 +19,11 @@
 		}
 	}
 }
+
+@each $media in $media-names{
+	.hidden-#{$media}-up {
+		@media #{map-get($media-strings-up, #{$media})} {
+			display: none;
+		}
+	}
+}

@@ -10,6 +10,11 @@
 	@include container;
 }
 
+.l-container--fluid{
+	@include container;
+	@include container-fluid;
+}
+
 .l-row{
     @include row;
 }

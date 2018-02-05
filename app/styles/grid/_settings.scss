@@ -10,7 +10,14 @@
 
 
 /** Breakpoints **/
-$media-names: ('xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge');
+$media-names: (
+	'xsmall',
+	'small',
+	'medium',
+	'large',
+	'xlarge',
+	'xxlarge'
+) !default;
 
 $screen-xsmall: 0 !default;
 $screen-small: 480px !default;
@@ -23,6 +30,7 @@ $screen-xxlarge: 1800px !default;
 /** Container widths **/
 
 $max-width-layout: 992px !default;
+$container-xsmall: 100% !default;
 $container-small: 100% !default;
 $container-medium: 100% !default;
 $container-large: 100% !default;
@@ -38,20 +46,23 @@ $grid-columns: 36 !default;
 $grid-gutter-width: 30px !default;
 
 /** Strings for Media **/
-
+// @each $media in $media-names{
+// 	.hidden-#{$media}-only {
+// 		@media #{map-get($media-strings-only, #{$media})} {
+// 			display: none;
+// 		}
+// 	}
+// }
 $media-screen: 'screen';
-$xsmall-up: $media-screen;
-$xsmall-only: '#{media-screen} and (max-width: #{getUpperWidthForMedia($screen-small)})';
-$small-up: '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-small)})';
-$small-only: '#{$media-screen} and (max-width: #{getUpperWidthForMedia($screen-medium)})';
-$medium-up: '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-medium)})';
-$medium-only: '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-medium)}) and (max-width:#{getUpperWidthForMedia($screen-large)})';
-$large-up: '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-large)})';
-$large-only: '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-large)}) and (max-width:#{getUpperWidthForMedia($screen-xlarge)})';
-$xlarge-up: '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-xlarge)})';
-$xlarge-only: '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-xlarge)}) and (max-width:#{getUpperWidthForMedia($screen-xxlarge)})';
-$xxlarge-up: '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-xxlarge)})';
-$xxlarge-only: '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-xxlarge)})';
+
+$media-strings-up: (
+	'xsmall': $media-screen,
+	'small': '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-small)})',
+	'medium': '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-medium)})',
+	'large': '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-large)})',
+	'xlarge': '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-xlarge)})',
+	'xxlarge': '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-xxlarge)})',
+);
 
 $media-strings-only: (
 	'xsmall': '#{media-screen} and (max-width: #{getUpperWidthForMedia($screen-small)})',
