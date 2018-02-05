@@ -8,13 +8,14 @@ $rhythm-unit: 'px';
 $round-to-nearest-half-line: true;
 /** Vertical rhythm debug **/
 $vertical-rhythm-debug: false;
-$vertical-rhythm-color-lines: #000;
+$vertical-rhythm-color-lines: map-get($colors, 'black');
+$color-base-font-color: map-get($colors, 'black');
 
 //MIXINS
 // Import fonts
 @mixin font($family, $src, $weight: false, $style: false) {
     @font-face {
-        display-font: swap;
+		font-display: optional;
         font-family: quote($family);
         src: url('/fonts/' + $src + '.woff') format("woff");
 
@@ -134,8 +135,8 @@ a {
 }
 
 // LISTS
-$list-color: $color-black;
-$list-bullet-color: $color-gray;
+$list-color: map-get($colors, 'black');
+$list-bullet-color: map-get($colors, 'black');
 $list-font-size: 17px;
 $list-line-height: 28px;
 $list-sublist-padding-left: 2; // gutter value

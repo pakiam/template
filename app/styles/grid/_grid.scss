@@ -2,6 +2,10 @@
 @import "mixins";
 @import "visibility";
 
+* {
+    box-sizing: border-box;
+}
+
 .l-container{
 	@include container;
 }
