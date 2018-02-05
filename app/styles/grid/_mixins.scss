@@ -4,9 +4,11 @@
 
 @mixin container() {
     display: block;
-    max-width: $max-width-layout;
+    max-width: $max-width-layout - $grid-gutter-width;
     margin-left: auto;
-    margin-right: auto;
+	margin-right: auto;
+	padding-left: $grid-gutter-width/2;
+	padding-right: $grid-gutter-width/2;
 }
 @mixin container-fluid() {
 	max-width: 100%;
@@ -20,8 +22,8 @@
 }
 
 @mixin row-gutter($number) {
-	margin-left: ($number/2 * -1) * 1px;
-	margin-right: ($number/2 * -1) * 1px;
+	margin-left: -($number/2) * 1px;
+	margin-right: -($number/2) * 1px;
 }
 
 /** Column **/

@@ -4,7 +4,6 @@
 
 .l-container{
 	@include container;
-	@include columns-gutter(30);
 }
 
 .l-row{
