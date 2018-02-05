@@ -9,26 +9,33 @@ gulp.task('icons', () => (
 	gulp.src('app/icons/**/*.svg')
 		.pipe(plumber({errorHandler: errorHandler(`Error in 'icons' task`)}))
 		.pipe(svgSprite({
+			shape: {
+				dimension: {
+					maxHeight: 100,
+					maxWidth: 100
+				}
+			},
 			mode: {
-				sprite: {
+				view: {
 					dest: './',
 					layout: 'diagonal',
-					sprite: 'default-svg',
+					sprite: 'svg-sprite-styles',
 					bust: false,
 					render: {
 						scss: {
+							dest: '_sprite',
 							template: 'app/icons/sprite-template.scss'
 						}
-					}
+					},
 				},
-				symbol: true,		// Activate the «symbol» mode
-				variables: {
-					mapname: 'icons'
+				symbol: {
+					dest: './',
+					sprite: 'svg-sprite',
+					bust: false
 				},
-				svgId: "icon_%f"
-			}
+			},
 		}))
 		.pipe(gulpIf(/\.scss$/, gulp.dest('app/styles/helpers')))
-		.pipe(gulpIf(/\.svg$/, rename('icon.svg')))
+		// .pipe(gulpIf(/\.svg$/, rename('icon.svg')))
 		.pipe(gulpIf(/\.svg$/, gulp.dest('dist/assets/images/')))
 ));

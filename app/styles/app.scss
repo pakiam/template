@@ -70,3 +70,14 @@ h6 {
     $fz: (12px 20px) (12px 20px) (14px 22px);
     @include font-size($fz);
 }
+
+
+.sprite-1-test{
+	$twitter: map-get($icons, twitter-logo-silhouette);
+	$sprite: map-get($icons, sprite);
+	background-image: url(map-get($sprite, svgPath));
+    background-position: map-get($twitter, backgroundX) map-get($twitter, backgroundX);
+	fill: tomato;
+	width: 100px;
+	height: 100px;
+}
