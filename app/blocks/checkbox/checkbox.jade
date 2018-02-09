@@ -1,0 +1,5 @@
+mixin checkbox(label, name, id, checked)
+	+b.c-checkbox&attributes(attributes)
+		block
+		+e('input').__input(type="checkbox" checked=checked id=id name=name)
+		+e('label').__label(for=id)= label

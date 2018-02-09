@@ -1,0 +1,65 @@
+$md-checkbox-margin: 0;
+$md-checkbox-checked-color: map-get($colors, 'blue' );
+$md-checkbox-border-color: rgba(map-get($colors, 'white' ), .4);
+
+$md-checkbox-size: 13px;
+$md-checkbox-padding: 4px;
+
+$md-checkmark: map-get($icons, check);
+$sprite: map-get($icons, sprite);
+
+
+.c-checkbox {
+  position: relative;
+  margin: $md-checkbox-margin;
+
+  .c-checkbox__label {
+    cursor: pointer;
+    &:before, &:after {
+      content: "";
+      position: absolute;
+      left:0;
+      top: 0;
+    }
+
+    &:before {
+      // box
+      width: $md-checkbox-size;
+      height: $md-checkbox-size;
+      background: map-get($colors, 'blue' );
+      border: 2px solid $md-checkbox-border-color;
+
+      cursor: pointer;
+      transition: background .3s;
+    }
+
+    &:after {
+      // checkmark
+    }
+  }
+
+  .c-checkbox__input {
+    outline: 0;
+    margin-right: $md-checkbox-size - 10px;
+	opacity: 0;
+    &:checked {
+       + .c-checkbox__label:before{
+        background: $md-checkbox-checked-color;
+        border: 2px solid $md-checkbox-border-color;
+      }
+      + .c-checkbox__label:after {
+			content: "";
+			position: absolute;
+			display: block;
+			width: 12px;
+			height: 12px;
+			background-image: url("../images/check.svg");
+			background-position: center;
+			background-size: cover;
+			left: 4px;
+			top: 1px;
+      }
+    }
+  }
+
+}

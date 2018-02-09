@@ -2,13 +2,13 @@
 
 /** Container **/
 
-@mixin container() {
+@mixin container($gutter-width: $grid-gutter-width) {
     display: block;
-    max-width: $max-width-layout - $grid-gutter-width;
+    max-width: $max-width-layout - $gutter-width;
     margin-left: auto;
 	margin-right: auto;
-	padding-left: $grid-gutter-width/2;
-	padding-right: $grid-gutter-width/2;
+	padding-left: $gutter-width/2;
+	padding-right: $gutter-width/2;
 }
 @mixin container-fluid() {
 	max-width: 100%;
@@ -22,8 +22,8 @@
 }
 
 @mixin row-gutter($number) {
-	margin-left: -($number/2) * 1px;
-	margin-right: -($number/2) * 1px;
+	margin-left: -($number/2);
+	margin-right: -($number/2);
 }
 
 /** Column **/
@@ -120,4 +120,38 @@
     }
 }
 
+@mixin xsmall() {
+    @media #{map-get($media-strings, 'xsmall')} {
+        @content;
+    }
+}
 
+@mixin small() {
+    @media #{map-get($media-strings, 'small')} {
+        @content;
+    }
+}
+
+@mixin medium() {
+    @media #{map-get($media-strings, 'medium')} {
+        @content;
+    }
+}
+
+@mixin large() {
+    @media #{map-get($media-strings, 'large')} {
+        @content;
+    }
+}
+
+@mixin xlarge() {
+    @media #{map-get($media-strings, 'xlarge')} {
+        @content;
+    }
+}
+
+@mixin xxlarge() {
+    @media #{map-get($media-strings, 'xxlarge')} {
+        @content;
+    }
+}

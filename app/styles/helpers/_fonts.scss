@@ -1,16 +1,17 @@
 @import "../grid/settings";
 @import "../grid/mixins";
 @import "colors";
+
 /** Vertical rhythm **/
-$base-font-size: 16px;
-$base-vertical-rhythm: 10px;
-$base-line-height: 24px;
-$rhythm-unit: 'px';
+$base-font-size: 16px !default;
+$base-vertical-rhythm: 10px !default;
+$base-line-height: 24px !default;
+$rhythm-unit: 'px' !default;
 $round-to-nearest-half-line: true;
 /** Vertical rhythm debug **/
 $vertical-rhythm-debug: false;
-$vertical-rhythm-color-lines: map-get($colors, 'black');
-$color-base-font-color: map-get($colors, 'black');
+$vertical-rhythm-color-lines: map-get($colors, 'black') !default;
+$color-base-font-color: map-get($colors, 'black') !default;
 
 //MIXINS
 // Import fonts
@@ -18,7 +19,7 @@ $color-base-font-color: map-get($colors, 'black');
     @font-face {
 		font-display: optional;
         font-family: quote($family);
-        src: url('/fonts/' + $src + '.woff') format("woff");
+        src: url('../Fonts/' + $src + '.woff') format("woff");
 
         @if($weight) {
             font-weight: $weight;
@@ -28,6 +29,12 @@ $color-base-font-color: map-get($colors, 'black');
             font-style: $style;
         }
     }
+}
+
+// add font
+@mixin font-family($family, $weight: 400) {
+	font-family: $family, sans-serif;
+	font-weight: $weight;
 }
 
 // Adaptive typography

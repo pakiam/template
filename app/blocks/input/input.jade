@@ -1,0 +1,13 @@
+mixin input(label, name, id, type, isTextarea)
+	+b('div').c-input-group&attributes(attributes)
+		block
+		if isTextarea
+			textarea(type=type, required, id=id, name=name).c-input-group__input.c-input-group__input--textarea
+			span.c-input-group__highlight
+			span.c-input-group__bar
+			label(for=id).c-input-group__label=label
+		else
+			input(type=type, required, id=id, name=name).c-input-group__input
+			span.c-input-group__highlight
+			span.c-input-group__bar
+			label(for=id).c-input-group__label=label

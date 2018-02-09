@@ -72,3 +72,12 @@ $media-strings-only: (
 	'xlarge': '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-xlarge)}) and (max-width:#{getUpperWidthForMedia($screen-xxlarge)})',
 	'xxlarge': '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-xxlarge)})',
 );
+
+$media-strings: (
+	'xsmall': '#{media-screen} and (max-width: #{getUpperWidthForMedia($screen-small)})',
+	'small': '#{$media-screen} and (max-width: #{getUpperWidthForMedia($screen-medium)})',
+	'medium': '#{$media-screen} and (max-width:#{getUpperWidthForMedia($screen-large)})',
+	'large': '#{$media-screen} and (max-width:#{getUpperWidthForMedia($screen-xlarge)})',
+	'xlarge': '#{$media-screen} and (max-width:#{getUpperWidthForMedia($screen-xxlarge)})',
+	'xxlarge': '#{$media-screen} and (min-width:#{getLowerWidthForMedia($screen-xxlarge)})',
+)

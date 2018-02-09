@@ -2,19 +2,4 @@
 @import "mixins";
 @import "visibility";
 
-* {
-    box-sizing: border-box;
-}
 
-.l-container{
-	@include container;
-}
-
-.l-container--fluid{
-	@include container;
-	@include container-fluid;
-}
-
-.l-row{
-    @include row;
-}

@@ -1,0 +1,22 @@
+// include in main file on purpose
+.animate-from-top-10{
+	transform: translate3d(0, 10px, 0);
+	opacity: 0;
+	transition: transform .3s ease, opacity .3s ease;
+	&.js-loaded{
+		transform: translate3d(0, 0px, 0);
+		opacity: 1;
+	}
+}
+
+$delays: 200 400 600 800 1000 1200 1300 1400 1500 1700 1900 2100 2300 2500;
+
+@mixin delays {
+	@each $i in $delays {
+        .animate-transition-delay-#{$i} {
+            transition-delay: #{$i}ms;
+        }
+    }
+}
+
+@include delays();

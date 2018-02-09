@@ -1,0 +1,21 @@
+.c-link{
+	text-decoration: none;
+	color: map-get($colors, 'black' );
+	cursor: pointer;
+	$fz: (13px 30px) (15px 30px) (15px 30px);
+	@include font-size($fz);
+	letter-spacing: 0.01em;
+	transition: color .2s ease;
+	svg {
+		transition: fill .2s ease;
+	}
+	&:hover{
+		color: map-get($colors, 'blue' );
+		svg {
+			fill: map-get($colors, 'blue' );
+		}
+	}
+	@include small {
+
+	}
+}
