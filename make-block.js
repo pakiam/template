@@ -12,8 +12,8 @@ const BLOCKS_DIR = path.join(__dirname, 'app/blocks');
 
 // default content for files in new block
 const fileSources = {
-	jade: `mixin {blockName}()\n\t+b.{blockName}&attributes(attributes)\n\t\tblock\n`,
-	scss: `.{blockName}{\n\tdisplay: block\n\t}\n`
+	jade: `mixin {blockName}()\n\t+b.b-{blockName}&attributes(attributes)\n\t\tblock\n`,
+	scss: `.b-{blockName}{\n\tdisplay: block\n}\n`
 };
 
 function validateBlockName(blockName) {

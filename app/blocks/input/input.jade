@@ -2,12 +2,12 @@ mixin input(label, name, id, type, isTextarea)
 	+b('div').c-input-group&attributes(attributes)
 		block
 		if isTextarea
-			textarea(type=type, required, id=id, name=name).c-input-group__input.c-input-group__input--textarea
+			textarea.c-input-group__input.c-input-group__input--textarea(type=type, required, id=id, name=name)
 			span.c-input-group__highlight
 			span.c-input-group__bar
-			label(for=id).c-input-group__label=label
+			label.c-input-group__label(for=id)=label
 		else
-			input(type=type, required, id=id, name=name).c-input-group__input
+			input.c-input-group__input(type=type, required, id=id, name=name)
 			span.c-input-group__highlight
 			span.c-input-group__bar
-			label(for=id).c-input-group__label=label
+			label.c-input-group__label(for=id)=label
