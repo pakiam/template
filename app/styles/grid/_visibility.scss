@@ -1,7 +1,7 @@
 @import "settings";
 
 @mixin hidden {
-  display: none;
+  display: none !important;
 }
 
 @mixin visuallyhidden{

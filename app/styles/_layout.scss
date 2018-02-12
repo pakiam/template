@@ -2,6 +2,17 @@
     box-sizing: border-box;
 }
 
+body {
+	/** body styles */
+}
+
+img {
+	display: inline-block;
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+
 .l-container{
 	@include container;
 }
@@ -14,6 +25,38 @@
 .l-row{
     @include row;
 }
+
+// HEADINGS
+h1 {
+    $fz: (40px 40px) (40px 40px) (55px 55px);
+    @include font-size($fz);
+}
+
+h2 {
+    $fz: (32px 34px) (32px 34px) (45px 50px);
+    @include font-size($fz);
+}
+
+h3 {
+    $fz: (26px 30px) (26px 30px) (36px 40px);
+    @include font-size($fz);
+}
+
+h4 {
+    $fz: (14px 22px) (14px 22px) (17px 28px);
+    @include font-size($fz);
+}
+
+h5 {
+    $fz: (14px 22px) (14px 22px) (15px 24px);
+    @include font-size($fz);
+}
+
+h6 {
+    $fz: (12px 20px) (12px 20px) (14px 22px);
+    @include font-size($fz);
+}
+
 
 .l-custom-row{
 	@include row;
